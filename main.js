@@ -10,10 +10,33 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-
+//tirar duvida com professor.
 const pigLatin = (word) => {
+let acertar = word.toLowerCase().trim()
+let position = positionFirstVowel(acertar)
+let newWord = acertar
+if (position == 0){
+newWord = acertar + "yay"
+return newWord
+} 
+else if (position > 0) {
+  let part1 = acertar.substring(0, position)
+let part2 = acertar.substring(position)
+ newWord = part2 + part1 + "ay"
+ return newWord
+}
 
-  // Your code here
+else if (position = -1) {
+newWord = acertar + "ay"
+return newWord
+}
+
+
+//se a primeira letra for vogal, colocar "yay" no final da palavra. ex: eletanteyay
+//se comecar comecar com consoante, pega a primeira letra, coloca no final e coloca AY, EX: BARCO = ARCOBAY
+//se nao tiver vogal nenhuma coloca AY no final ex  PST, PSTAY
+//pegar as consoantes iniciais,mover para o final e adicionar AY, EX: STRING = INGSTRAY
+
 
 }
 
@@ -26,6 +49,71 @@ const getPrompt = () => {
     getPrompt();
   });
 }
+//coloquei aqui 
+let positionFirstVowel = (acertar) => {
+
+  let aIdx = acertar.indexOf("a");
+  let eIdx = acertar.indexOf("e");
+  let iIdx = acertar.indexOf("i");
+  let oIdx = acertar.indexOf("o");
+  let uIdx = acertar.indexOf("u");
+  let len = acertar.length;
+
+  let answer = -1;
+  
+  if (aIdx == -1) {
+
+  }
+  else if (aIdx != -1 && answer == -1) {
+      answer = aIdx
+  }
+  if (eIdx == -1) {
+  }
+
+  else if (eIdx != -1 && answer == -1) {
+      answer = eIdx
+
+  }
+  else if (eIdx != -1 && answer >= eIdx) {
+      answer = eIdx
+  }
+
+  if (iIdx == -1) {
+  }
+  else if (iIdx != -1 && answer == -1) {
+      answer = iIdx
+  }
+  else if (iIdx != -1 && answer >= iIdx) {
+      answer = iIdx
+  }
+
+  if (oIdx == -1) {
+
+  }
+  else if (oIdx !== -1 && answer == -1) {
+      answer = oIdx
+  }
+  else if (oIdx !== -1 && answer >= oIdx) {
+      answer = oIdx
+  }
+
+  if (uIdx == -1) {
+
+  }
+
+  else if (uIdx !== -1 && answer == -1) {
+      answer = uIdx
+  }
+  else if (uIdx !== -1 && answer >= uIdx) {
+      answer = uIdx
+  }
+  return answer
+
+}
+
+
+
+
 
 // Unit Tests
 // to use them run the command: npm test main.js
