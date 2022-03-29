@@ -12,36 +12,30 @@ const rl = readline.createInterface({
 
 //tirar duvida com professor.
 const pigLatin = (word) => {
-let acertar = word.toLowerCase().trim()
-let position = positionFirstVowel(acertar)
-let newWord = acertar
+  let acertar = word.toLowerCase().trim();
+  let position = positionFirstVowel(acertar);
+  let newWord = acertar;
 
-if (position == 0){
-newWord = acertar + "yay"
-return newWord
-} 
-else if (position > 0) {
-  let part1 = acertar.substring(0, position) 
-  let part2 = acertar.substring(position)
-  //substring se usa para separar a palavra, tem q colocar as 2 partes, onde comeca e termina
- //ex: "Hello"  text.substring(1, 4) ; resultado "ell" 
- newWord = part2 + part1 + "ay"
- return newWord
-}
+  if (position == 0) {
+    newWord = acertar + "yay";
+    return newWord;
+  } else if (position > 0) {
+    let part1 = acertar.substring(0, position);
+    let part2 = acertar.substring(position);
+    //substring se usa para separar a palavra, tem q colocar as 2 partes, onde comeca e termina
+    //ex: "Hello"  text.substring(1, 4) ; resultado "ell"
+    newWord = part2 + part1 + "ay";
+    return newWord;
+  } else if ((position == -1)) {
+    newWord = acertar + "ay";
+    return newWord;
+  }
 
-else if (position = -1) {
-newWord = acertar + "ay"
-return newWord
-}
-
-
-//se a primeira letra for vogal, colocar "yay" no final da palavra. ex: eletanteyay
-//se comecar comecar com consoante, pega a primeira letra, coloca no final e coloca AY, EX: BARCO = ARCOBAY
-//se nao tiver vogal nenhuma coloca AY no final ex  PST, PSTAY
-//pegar as consoantes iniciais,mover para o final e adicionar AY, EX: STRING = INGSTRAY
-
-
-}
+  //se a primeira letra for vogal, colocar "yay" no final da palavra. ex: eletanteyay
+  //se comecar comecar com consoante, pega a primeira letra, coloca no final e coloca AY, EX: BARCO = ARCOBAY
+  //se nao tiver vogal nenhuma coloca AY no final ex  PST, PSTAY
+  //pegar as consoantes iniciais,mover para o final e adicionar AY, EX: STRING = INGSTRAY
+};
 
 // the first function called in the program to get an input from the user
 // to run the function use the command: node main.js
