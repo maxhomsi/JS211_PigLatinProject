@@ -15,13 +15,16 @@ const pigLatin = (word) => {
 let acertar = word.toLowerCase().trim()
 let position = positionFirstVowel(acertar)
 let newWord = acertar
+
 if (position == 0){
 newWord = acertar + "yay"
 return newWord
 } 
 else if (position > 0) {
-  let part1 = acertar.substring(0, position)
-let part2 = acertar.substring(position)
+  let part1 = acertar.substring(0, position) 
+  let part2 = acertar.substring(position)
+  //substring se usa para separar a palavra, tem q colocar as 2 partes, onde comeca e termina
+ //ex: "Hello"  text.substring(1, 4) ; resultado "ell" 
  newWord = part2 + part1 + "ay"
  return newWord
 }
