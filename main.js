@@ -48,7 +48,6 @@ const getPrompt = () => {
 }
 //coloquei aqui 
 let positionFirstVowel = (acertar) => {
-
   let aIdx = acertar.indexOf("a");
   let eIdx = acertar.indexOf("e");
   let iIdx = acertar.indexOf("i");
@@ -57,56 +56,40 @@ let positionFirstVowel = (acertar) => {
   let len = acertar.length;
 
   let answer = -1;
-  
-  if (aIdx == -1) {
 
-  }
-  else if (aIdx != -1 && answer == -1) {
-      answer = aIdx
+  if (aIdx == -1) {
+  } else if (aIdx != -1 && answer == -1) {
+    answer = aIdx;
   }
   if (eIdx == -1) {
-  }
-
-  else if (eIdx != -1 && answer == -1) {
-      answer = eIdx
-
-  }
-  else if (eIdx != -1 && answer >= eIdx) {
-      answer = eIdx
+  } else if (eIdx != -1 && answer == -1) {
+    answer = eIdx;
+  } else if (eIdx != -1 && answer >= eIdx) {
+    answer = eIdx;
   }
 
   if (iIdx == -1) {
-  }
-  else if (iIdx != -1 && answer == -1) {
-      answer = iIdx
-  }
-  else if (iIdx != -1 && answer >= iIdx) {
-      answer = iIdx
+  } else if (iIdx != -1 && answer == -1) {
+    answer = iIdx;
+  } else if (iIdx != -1 && answer >= iIdx) {
+    answer = iIdx;
   }
 
   if (oIdx == -1) {
-
-  }
-  else if (oIdx !== -1 && answer == -1) {
-      answer = oIdx
-  }
-  else if (oIdx !== -1 && answer >= oIdx) {
-      answer = oIdx
+  } else if (oIdx !== -1 && answer == -1) {
+    answer = oIdx;
+  } else if (oIdx !== -1 && answer >= oIdx) {
+    answer = oIdx;
   }
 
   if (uIdx == -1) {
-
+  } else if (uIdx !== -1 && answer == -1) {
+    answer = uIdx;
+  } else if (uIdx !== -1 && answer >= uIdx) {
+    answer = uIdx;
   }
-
-  else if (uIdx !== -1 && answer == -1) {
-      answer = uIdx
-  }
-  else if (uIdx !== -1 && answer >= uIdx) {
-      answer = uIdx
-  }
-  return answer
-
-}
+  return answer;
+};
 
 
 
